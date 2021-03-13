@@ -1,6 +1,7 @@
 package com.example.cursomc.domain;
 
 import java.io.Serializable;
+import java.util.Optional;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -66,6 +67,4 @@ public class Categoria implements Serializable {
 			return false;
 		return true;
 	}
-
-
 }
