@@ -18,4 +18,9 @@ public class CategoriaService {
 		Optional<Categoria> obj = rep.findById(id);
 		return obj.orElse(null);
 	}
+	
+	public Iterable<Categoria> buscarTodos() {
+		Iterable<Categoria> lista = rep.findAll();
+		return lista;
+	}
 }

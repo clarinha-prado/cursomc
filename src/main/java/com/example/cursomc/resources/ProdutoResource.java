@@ -7,25 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.cursomc.domain.Categoria;
-import com.example.cursomc.services.CategoriaService;
+import com.example.cursomc.domain.Produto;
+import com.example.cursomc.services.ProdutoService;
 
 @RestController
-@RequestMapping(value="/categorias")
-public class CategoriaResource {
+@RequestMapping(value="/produtos")
+public class ProdutoResource {
 	
 	@Autowired
-	private CategoriaService service;
-	
-	@RequestMapping(method=RequestMethod.GET)
-	public Iterable<Categoria> findAll() {
-		Iterable<Categoria> lista = service.buscarTodos();
-		return lista;
-	}
-	
+	private ProdutoService service;
+		
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable Integer id) {
-		Categoria obj = service.buscar(id);
+		Produto obj = service.buscar(id);
 		return ResponseEntity.ok().body(obj);
 	}
 
