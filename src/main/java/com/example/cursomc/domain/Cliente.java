@@ -31,6 +31,10 @@ public class Cliente implements Serializable {
 	
 	@JsonManagedReference
 	@OneToMany(mappedBy="cliente")
+	private List<Pedido> pedidos = new ArrayList<>();
+	
+	@JsonManagedReference
+	@OneToMany(mappedBy="cliente")
 	private List<Endereco> enderecos = new ArrayList<>();
 	
 	@ElementCollection
@@ -106,6 +110,14 @@ public class Cliente implements Serializable {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
 	}
 
 	@Override
